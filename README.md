@@ -6,20 +6,24 @@ Static portfolio website for GitHub Pages. Built with plain HTML, CSS, and JavaS
 
 - `index.html` - portfolio content and structure
 - `styles.css` - responsive UI, palette, and animation styles
-- `script.js` - scroll reveal, active navigation, and progress effects
+- `script.js` - theme toggle, scroll reveal, active navigation, and progress effects
+- `assets/favicon.svg` - browser tab icon
 - `assets/hero-workspace.png` - generated hero image
 - `assets/Nachammai-Nagappan-Resume.docx` - downloadable resume
 
-## GitHub Pages
+## Profile Links
 
-1. Push this folder to a GitHub repository.
-2. In the repository, open Settings > Pages.
-3. Set Source to "Deploy from a branch".
-4. Select the `main` branch and `/root`.
-5. Save. The site will be available at the GitHub Pages URL after deployment.
+- LinkedIn: https://www.linkedin.com/in/nachammai-nagappan
+- HPE Community: published articles on hybrid-cloud resilience and AI-driven legacy modernization
 
-For a personal site, name the repository `your-username.github.io` and GitHub Pages will serve it at `https://your-username.github.io/`.
+The site follows each visitor's browser light/dark preference by default and includes a manual theme toggle. Technology logos use Devicon from jsDelivr, and UI icons use Lucide from unpkg, so keep internet access on while previewing locally.
 
-## Notes
+## Local Preview
 
-The resume included a LinkedIn label but not a profile URL in the DOCX hyperlink metadata, so the live page uses email, phone, and resume download actions.
+```bash
+python3 -m http.server 8000
+```
+
+Open `http://localhost:8000`.
+
+

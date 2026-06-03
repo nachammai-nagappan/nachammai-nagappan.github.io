@@ -9,7 +9,24 @@
     />
     <meta name="theme-color" content="#FFEDDB" />
     <title>Nachammai Nagappan | Senior Full Stack Developer</title>
+    <script>
+      (() => {
+        try {
+          const theme = localStorage.getItem("portfolio-theme");
+          if (theme === "light" || theme === "dark") {
+            document.documentElement.dataset.theme = theme;
+          }
+        } catch (error) {
+          document.documentElement.removeAttribute("data-theme");
+        }
+      })();
+    </script>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preload" as="image" href="assets/hero-workspace.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -19,13 +36,29 @@
 
     <header class="site-header">
       <a class="brand" href="#home" aria-label="Nachammai Nagappan home">NN</a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="#projects">Impact</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#work">Work</a>
+          <a href="#projects">Impact</a>
+          <a href="#recognition">Recognition</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Toggle dark mode"
+          aria-pressed="false"
+        >
+          <span class="theme-toggle__sun" aria-hidden="true">
+            <i data-lucide="sun"></i>
+          </span>
+          <span class="theme-toggle__moon" aria-hidden="true">
+            <i data-lucide="moon"></i>
+          </span>
+        </button>
+      </div>
     </header>
 
     <main id="home">
@@ -51,12 +84,30 @@
           <div class="hero-meta" aria-label="Professional highlights">
             <span>5 years experience</span>
             <span>Bangalore</span>
-            <span>Open to EU relocation</span>
+            <span>Open to relocation</span>
+          </div>
+          <div class="hero-stack" aria-label="Core technologies">
+            <span><i class="devicon-python-plain colored" aria-hidden="true"></i>Python</span>
+            <span><i class="devicon-go-original-wordmark colored" aria-hidden="true"></i>Go</span>
+            <span><i class="devicon-react-original colored" aria-hidden="true"></i>React</span>
+            <span><i class="devicon-vuejs-plain colored" aria-hidden="true"></i>Vue</span>
+            <span><i class="devicon-docker-plain colored" aria-hidden="true"></i>Docker</span>
+            <span><i class="devicon-amazonwebservices-plain-wordmark colored" aria-hidden="true"></i>AWS</span>
+            <span><i class="devicon-azure-plain colored" aria-hidden="true"></i>Azure</span>
           </div>
           <div class="hero-actions">
             <a class="button button--primary" href="mailto:nachammai.nagappan03@gmail.com">
               <i data-lucide="mail" aria-hidden="true"></i>
               Contact
+            </a>
+            <a
+              class="button button--secondary"
+              href="https://www.linkedin.com/in/nachammai-nagappan"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="linkedin-mark" aria-hidden="true">in</span>
+              LinkedIn
             </a>
             <a
               class="button button--secondary"
@@ -67,25 +118,6 @@
               Resume
             </a>
           </div>
-        </div>
-      </section>
-
-      <section class="signal-band" aria-label="Snapshot">
-        <div class="metric" data-animate>
-          <strong>100,000+</strong>
-          <span>records automated into Redmine</span>
-        </div>
-        <div class="metric" data-animate data-delay="1">
-          <strong>56%</strong>
-          <span>migration assessment effort reduced</span>
-        </div>
-        <div class="metric" data-animate data-delay="2">
-          <strong>100%</strong>
-          <span>coverage on a client-facing unit test framework</span>
-        </div>
-        <div class="metric" data-animate data-delay="3">
-          <strong>40%</strong>
-          <span>reduction in trivial bug tickets</span>
         </div>
       </section>
 
@@ -149,12 +181,12 @@
                 </li>
               </ul>
               <div class="tag-row" aria-label="Cloud developer stack">
-                <span>Go</span>
-                <span>Python Flask</span>
-                <span>React</span>
-                <span>Docker</span>
-                <span>OpenShift</span>
-                <span>Azure DevOps</span>
+                <span><i class="devicon-go-original-wordmark colored" aria-hidden="true"></i>Go</span>
+                <span><i class="devicon-flask-original" aria-hidden="true"></i>Python Flask</span>
+                <span><i class="devicon-react-original colored" aria-hidden="true"></i>React</span>
+                <span><i class="devicon-docker-plain colored" aria-hidden="true"></i>Docker</span>
+                <span><i class="devicon-redhat-plain colored" aria-hidden="true"></i>OpenShift</span>
+                <span><i class="devicon-azuredevops-plain colored" aria-hidden="true"></i>Azure DevOps</span>
               </div>
             </div>
           </article>
@@ -186,12 +218,12 @@
                 </li>
               </ul>
               <div class="tag-row" aria-label="Technical consultant stack">
-                <span>Django</span>
-                <span>Celery</span>
-                <span>Redis</span>
-                <span>Vue</span>
-                <span>Jest</span>
-                <span>MySQL</span>
+                <span><i class="devicon-django-plain colored" aria-hidden="true"></i>Django</span>
+                <span><i class="devicon-python-plain colored" aria-hidden="true"></i>Celery</span>
+                <span><i class="devicon-redis-plain colored" aria-hidden="true"></i>Redis</span>
+                <span><i class="devicon-vuejs-plain colored" aria-hidden="true"></i>Vue</span>
+                <span><i class="devicon-jest-plain colored" aria-hidden="true"></i>Jest</span>
+                <span><i class="devicon-mysql-plain colored" aria-hidden="true"></i>MySQL</span>
               </div>
             </div>
           </article>
@@ -214,10 +246,10 @@
               authorization.
             </p>
             <div class="project-footer">
-              <span>Go</span>
-              <span>Minio</span>
-              <span>Prometheus</span>
-              <span>OpenShift</span>
+              <span><i class="devicon-go-original-wordmark colored" aria-hidden="true"></i>Go</span>
+              <span><i class="devicon-docker-plain colored" aria-hidden="true"></i>Minio</span>
+              <span><i class="devicon-prometheus-original colored" aria-hidden="true"></i>Prometheus</span>
+              <span><i class="devicon-redhat-plain colored" aria-hidden="true"></i>OpenShift</span>
             </div>
           </article>
 
@@ -230,10 +262,10 @@
               delivery infrastructure.
             </p>
             <div class="project-footer">
-              <span>Flask</span>
-              <span>React</span>
-              <span>Grommet</span>
-              <span>MySQL</span>
+              <span><i class="devicon-flask-original" aria-hidden="true"></i>Flask</span>
+              <span><i class="devicon-react-original colored" aria-hidden="true"></i>React</span>
+              <span><i class="devicon-javascript-plain colored" aria-hidden="true"></i>Grommet</span>
+              <span><i class="devicon-mysql-plain colored" aria-hidden="true"></i>MySQL</span>
             </div>
           </article>
 
@@ -246,15 +278,52 @@
               reliability.
             </p>
             <div class="project-footer">
-              <span>Pandas</span>
-              <span>NumPy</span>
-              <span>OpenPyxl</span>
-              <span>PyTest</span>
+              <span><i class="devicon-pandas-plain colored" aria-hidden="true"></i>Pandas</span>
+              <span><i class="devicon-numpy-plain colored" aria-hidden="true"></i>NumPy</span>
+              <span><i class="devicon-python-plain colored" aria-hidden="true"></i>OpenPyxl</span>
+              <span><i class="devicon-pytest-plain colored" aria-hidden="true"></i>PyTest</span>
             </div>
           </article>
 
           <article class="project-card project-card--wide" data-animate>
             <div class="project-index">04</div>
+            <h3>Manufacturing &amp; Fulfillment - Methods Digitalization</h3>
+            <p>
+              Digitized method-document handling workflows across login, home
+              page views, filters, NPI and sustaining document lists, admin
+              configuration, originator, approver, and reviewer screens. Owned
+              delivery tasks across DevOps, testing, code review, ARB review,
+              go-live coordination, and finance alignment.
+            </p>
+            <div class="project-footer">
+              <span><i class="devicon-react-original colored" aria-hidden="true"></i>React</span>
+              <span><i class="devicon-javascript-plain colored" aria-hidden="true"></i>Grommet</span>
+              <span><i data-lucide="file-stack" aria-hidden="true"></i>OnlyOffice Document Server</span>
+              <span><i class="devicon-jenkins-line colored" aria-hidden="true"></i>Jenkins CI/CD</span>
+              <span><i class="devicon-mysql-plain colored" aria-hidden="true"></i>MySQL</span>
+              <span><i class="devicon-fastapi-plain colored" aria-hidden="true"></i>FastAPI</span>
+            </div>
+          </article>
+
+          <article class="project-card project-card--wide" data-animate data-delay="1">
+            <div class="project-index">05</div>
+            <h3>Conversational AI workflow prototypes</h3>
+            <p>
+              Built conversational AI prototypes using LLM-based prompting,
+              context-aware responses, and structured knowledge sources to
+              support enterprise workflow automation and improve how teams
+              navigate operational information.
+            </p>
+            <div class="project-footer">
+              <span><i class="devicon-azure-plain colored" aria-hidden="true"></i>Azure OpenAI Service</span>
+              <span><i data-lucide="link-2" aria-hidden="true"></i>LangChain</span>
+              <span><i data-lucide="database-zap" aria-hidden="true"></i>Retrieval-Augmented Generation</span>
+              <span><i data-lucide="brain-circuit" aria-hidden="true"></i>LLM prompting</span>
+            </div>
+          </article>
+
+          <article class="project-card project-card--wide" data-animate data-delay="2">
+            <div class="project-index">06</div>
             <h3>VMware vSphere data repository</h3>
             <p>
               ETL-driven application for migration assessment, delivering an
@@ -262,11 +331,69 @@
               effort by 56%.
             </p>
             <div class="project-footer">
-              <span>Django</span>
-              <span>Celery</span>
-              <span>Redis</span>
-              <span>Vue</span>
-              <span>Docker</span>
+              <span><i class="devicon-django-plain colored" aria-hidden="true"></i>Django</span>
+              <span><i class="devicon-python-plain colored" aria-hidden="true"></i>Celery</span>
+              <span><i class="devicon-redis-plain colored" aria-hidden="true"></i>Redis</span>
+              <span><i class="devicon-vuejs-plain colored" aria-hidden="true"></i>Vue</span>
+              <span><i class="devicon-docker-plain colored" aria-hidden="true"></i>Docker</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="recognition" class="recognition section-pad" aria-labelledby="recognition-title">
+        <div class="section-heading" data-animate>
+          <p class="eyebrow">Recognition &amp; Thought Leadership</p>
+          <h2 id="recognition-title">Recognized for delivery, sustainability, and modernization thinking.</h2>
+        </div>
+
+        <div class="recognition-grid">
+          <article class="recognition-card recognition-card--feature" data-animate>
+            <div class="recognition-icon" aria-hidden="true">
+              <i data-lucide="award"></i>
+            </div>
+            <h3>Multiple Best Performer Awards</h3>
+            <p>
+              Recognized repeatedly for high-impact engineering delivery, customer
+              ownership, dependable execution across enterprise projects, and
+              award-winning hackathon participation.
+            </p>
+          </article>
+
+          <article class="recognition-card" data-animate data-delay="1">
+            <div class="recognition-icon" aria-hidden="true">
+              <i data-lucide="leaf"></i>
+            </div>
+            <h3>Sustainable IT Conference Speaker</h3>
+            <p>
+              Presented GreenBird, a tool designed to monitor workload carbon
+              footprint and guide teams toward lower-impact infrastructure and
+              application decisions.
+            </p>
+          </article>
+
+          <article class="recognition-card recognition-card--writing" data-animate data-delay="2">
+            <div class="recognition-icon" aria-hidden="true">
+              <i data-lucide="newspaper"></i>
+            </div>
+            <h3>Published on HPE Community</h3>
+            <div class="article-links">
+              <a
+                href="https://community.hpe.com/t5/the-cloud-experience-everywhere/engineering-modern-resilient-by-design-applications-for-hybrid/ba-p/7263254"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Engineering modern resilient-by-design applications for hybrid cloud</span>
+                <i data-lucide="external-link" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://community.hpe.com/t5/ai-unlocked/from-cobol-to-cloud-ai-driven-acceleration-of-legacy/ba-p/7263188"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>From COBOL to cloud: AI-driven acceleration of legacy modernization</span>
+                <i data-lucide="external-link" aria-hidden="true"></i>
+              </a>
             </div>
           </article>
         </div>
@@ -280,28 +407,78 @@
 
         <div class="skill-layout">
           <article class="skill-panel" data-animate>
-            <h3>Frontend</h3>
+            <div class="skill-heading">
+              <span class="skill-icon"><i data-lucide="layout-dashboard" aria-hidden="true"></i></span>
+              <h3>Frontend</h3>
+            </div>
+            <div class="logo-cloud" aria-label="Frontend technologies">
+              <i class="devicon-react-original colored" title="React"></i>
+              <i class="devicon-vuejs-plain colored" title="Vue"></i>
+              <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+              <i class="devicon-jest-plain colored" title="Jest"></i>
+            </div>
             <p>React, Vue, Grommet, Buefy, Bulma, ChartJS, Jest</p>
           </article>
           <article class="skill-panel" data-animate data-delay="1">
-            <h3>Backend</h3>
+            <div class="skill-heading">
+              <span class="skill-icon"><i data-lucide="server" aria-hidden="true"></i></span>
+              <h3>Backend</h3>
+            </div>
+            <div class="logo-cloud" aria-label="Backend technologies">
+              <i class="devicon-python-plain colored" title="Python"></i>
+              <i class="devicon-django-plain colored" title="Django"></i>
+              <i class="devicon-flask-original" title="Flask"></i>
+              <i class="devicon-go-original-wordmark colored" title="Go"></i>
+              <i class="devicon-redis-plain colored" title="Redis"></i>
+            </div>
             <p>Python, Django, Flask, Pandas, Celery, Redis, Go, REST APIs</p>
           </article>
           <article class="skill-panel" data-animate data-delay="2">
-            <h3>Cloud &amp; DevOps</h3>
+            <div class="skill-heading">
+              <span class="skill-icon"><i data-lucide="cloud" aria-hidden="true"></i></span>
+              <h3>Cloud &amp; DevOps</h3>
+            </div>
+            <div class="logo-cloud" aria-label="Cloud and DevOps technologies">
+              <i class="devicon-amazonwebservices-plain-wordmark colored" title="AWS"></i>
+              <i class="devicon-azure-plain colored" title="Azure"></i>
+              <i class="devicon-docker-plain colored" title="Docker"></i>
+              <i class="devicon-redhat-plain colored" title="OpenShift"></i>
+              <i class="devicon-linux-plain colored" title="Linux"></i>
+            </div>
             <p>AWS, Azure, Docker, CI/CD, RedHat OpenShift, Linux Ubuntu</p>
           </article>
           <article class="skill-panel" data-animate>
-            <h3>Data &amp; Quality</h3>
+            <div class="skill-heading">
+              <span class="skill-icon"><i data-lucide="database" aria-hidden="true"></i></span>
+              <h3>Data &amp; Quality</h3>
+            </div>
+            <div class="logo-cloud" aria-label="Data and quality technologies">
+              <i class="devicon-mysql-plain colored" title="MySQL"></i>
+              <i class="devicon-pandas-plain colored" title="Pandas"></i>
+              <i class="devicon-numpy-plain colored" title="NumPy"></i>
+              <i class="devicon-pytest-plain colored" title="PyTest"></i>
+            </div>
             <p>MySQL, PyTest, OpenPyxl, data migration, unit testing, documentation</p>
           </article>
-          <article class="skill-panel" data-animate data-delay="1">
-            <h3>Collaboration</h3>
-            <p>Agile collaboration, stakeholder alignment, technical leadership</p>
-          </article>
           <article class="skill-panel" data-animate data-delay="2">
-            <h3>Tools</h3>
+            <div class="skill-heading">
+              <span class="skill-icon"><i data-lucide="wrench" aria-hidden="true"></i></span>
+              <h3>Tools</h3>
+            </div>
+            <div class="logo-cloud" aria-label="Engineering tools">
+              <i class="devicon-git-plain colored" title="Git"></i>
+              <i class="devicon-figma-plain colored" title="Figma"></i>
+              <i class="devicon-grafana-plain colored" title="Grafana"></i>
+              <i class="devicon-prometheus-original colored" title="Prometheus"></i>
+            </div>
             <p>Git, Figma, Grafana, Prometheus, Azure Boards, Redmine</p>
+          </article>
+          <article class="skill-panel" data-animate data-delay="1">
+            <div class="skill-heading">
+              <span class="skill-icon"><i data-lucide="users-round" aria-hidden="true"></i></span>
+              <h3>Collaboration</h3>
+            </div>
+            <p>Agile collaboration, stakeholder alignment, technical leadership</p>
           </article>
         </div>
       </section>
@@ -318,10 +495,10 @@
             <h3>Master of Science, Computer Science</h3>
             <p>Liverpool John Moores University, Liverpool, UK</p>
             <ul class="clean-list">
-              <li>Capstone: full-stack e-commerce clone with React and Spring Boot.</li>
+              <li>Capstone: Full-stack e-commerce clone with React and Spring Boot.</li>
               <li>
-                Thesis: modernization strategies for moving legacy monoliths to
-                cloud-native architectures.
+                Thesis: Modernization strategies for migrating legacy monoliths to
+                modern cloud-native architectures.
               </li>
             </ul>
           </article>
@@ -329,10 +506,10 @@
           <article class="education-card" data-animate data-delay="1">
             <span class="year">2016 - 2020</span>
             <h3>Bachelor of Engineering, Electrical and Electronics</h3>
-            <p>Velammal Engineering College, Chennai</p>
+            <p>Velammal Engineering College, Chennai, India</p>
             <ul class="clean-list">
-              <li>8.43 GPA.</li>
               <li>Innovation Club Head.</li>
+              <li>Project work: Converting footsteps to electricity with a miniature pyroelectric system.</li>
             </ul>
           </article>
 
@@ -366,6 +543,15 @@
           <a class="contact-link" href="tel:+919884435695">
             <i data-lucide="phone" aria-hidden="true"></i>
             +91 9884435695
+          </a>
+          <a
+            class="contact-link"
+            href="https://www.linkedin.com/in/nachammai-nagappan"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="linkedin-mark" aria-hidden="true">in</span>
+            LinkedIn profile
           </a>
           <a class="contact-link" href="assets/Nachammai-Nagappan-Resume.docx" download>
             <i data-lucide="file-down" aria-hidden="true"></i>
