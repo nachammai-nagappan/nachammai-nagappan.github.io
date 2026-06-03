@@ -571,6 +571,17 @@ h3 {
   margin: 0;
 }
 
+.personal-note {
+  padding: 16px 18px;
+  border-left: 3px solid var(--coffee);
+  border-radius: 8px;
+  background: var(--card-bg);
+}
+
+.personal-note strong {
+  color: var(--ink);
+}
+
 .work {
   background: var(--page-surface);
 }
